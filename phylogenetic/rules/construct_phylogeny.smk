@@ -18,3 +18,49 @@ This part of the workflow usually includes the following steps:
 
 See Augur's usage docs for these commands for more details.
 """
+
+
+rule tree:
+    """Building tree"""
+    input:
+        alignment = "results/aligned.fasta"
+    output:
+        tree = "results/tree_raw.nwk"
+    shell:
+        """
+        augur tree \
+            --alignment {input.alignment} \
+            --output {output.tree}
+        """
+
+rule refine:
+    """
+    Refining tree
+      - estimate timetree
+      - use {params.coalescent} coalescent timescale
+      - estimate {params.date_inference} node dates
+      - filter tips more than {params.clock_filter_iqd} IQDs from clock expectation
+    """
+    input:
+        tree = "results/tree_raw.nwk",
+        alignment = "results/aligned.fasta",
+        metadata = "data/metadata.tsv"
+    output:
+        tree = "results/tree.nwk",
+        node_data = "results/branch_lengths.json"
+    params:
+        coalescent = 'opt',
+        strain_id = 'accession',
+        refine_parameters = '--coalescent opt --date-inference marginal --date-confidence --clock-rate 0.00095 ' #--keep-polytomies --clock-rate 0.000755'
+    shell:
+        """
+        augur refine \
+            --tree {input.tree} \
+            --alignment {input.alignment} \
+            --metadata {input.metadata} \
+            --metadata-id-columns {params.strain_id} \
+            --output-tree {output.tree} \
+            --output-node-data {output.node_data} \
+            --timetree \
+            {params.refine_parameters}
+        """

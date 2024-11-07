@@ -1,0 +1,29 @@
+##gff-version 3
+#!gff-spec-version 1.21
+#!processor NCBI annotwriter
+##sequence-region NC_001437.1 1 10976
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=11072
+NC_001437.1	RefSeq	region	1	10976	.	+	.	ID=NC_001437.1:1..10976;Dbxref=taxon:11072;gbkey=Src;genome=genomic;mol_type=genomic RNA
+NC_001437.1	RefSeq	gene	96	10394	.	+	.	ID=gene-JEVgp1;Dbxref=GeneID:1489713;Name=POLY;gbkey=Gene;gene=POLY;gene_biotype=protein_coding;locus_tag=JEVgp1
+NC_001437.1	RefSeq	CDS	96	10394	.	+	0	ID=cds-NP_059434.1;Parent=gene-JEVgp1;Dbxref=GenBank:NP_059434.1,GeneID:1489713;Name=NP_059434.1;gbkey=CDS;gene=POLY;locus_tag=JEVgp1;product=polyprotein;protein_id=NP_059434.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	96	476	.	+	.	ID=id-NP_059434.1:1..127;Parent=cds-NP_059434.1;gbkey=Prot;product=anchored core protein anchC;protein_id=NP_775663.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	96	410	.	+	.	ID=id-NP_059434.1:1..105;Parent=cds-NP_059434.1;gbkey=Prot;product=core protein C;protein_id=NP_775662.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	477	977	.	+	.	ID=id-NP_059434.1:128..294;Note=prM/E cleavage site evidence: N-terminal amino acid sequencing%2C PMID: 3686827;Parent=cds-NP_059434.1;gbkey=Prot;product=membrane glycoprotein precursor prM;protein_id=NP_775664.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	477	752	.	+	.	ID=id-NP_059434.1:128..219;Note=pr/M cleavage site evidence: N-terminal amino acid sequencing%2C PMID: 3686827;Parent=cds-NP_059434.1;gbkey=Prot;product=protein pr;protein_id=YP_009333132.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	753	977	.	+	.	ID=id-NP_059434.1:220..294;Parent=cds-NP_059434.1;gbkey=Prot;product=membrane glycoprotein M;protein_id=NP_775665.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	978	2477	.	+	.	ID=id-NP_059434.1:295..794;Note=E/NS1 cleavage site predicted by SignalP 4.1;Parent=cds-NP_059434.1;gbkey=Prot;product=envelope protein E;protein_id=NP_775666.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	2478	3533	.	+	.	ID=id-NP_059434.1:795..1146;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS1;protein_id=NP_775667.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	3534	4214	.	+	.	ID=id-NP_059434.1:1147..1373;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS2a;protein_id=NP_775668.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	4215	4607	.	+	.	ID=id-NP_059434.1:1374..1504;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS2b;protein_id=NP_775669.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	4608	6464	.	+	.	ID=id-NP_059434.1:1505..2123;Note=NS3 proteinase/ATPase/helicase peptide;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS3;protein_id=NP_775670.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	6465	6842	.	+	.	ID=id-NP_059434.1:2124..2249;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS4a;protein_id=NP_775671.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	6843	6911	.	+	.	ID=id-NP_059434.1:2250..2272;Parent=cds-NP_059434.1;gbkey=Prot;product=2K protein;protein_id=NP_775672.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	6912	7676	.	+	.	ID=id-NP_059434.1:2273..2527;Parent=cds-NP_059434.1;gbkey=Prot;product=non-structural protein NS4b;protein_id=NP_775673.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	7677	10391	.	+	.	ID=id-NP_059434.1:2528..3432;Note=RdRp%3B nonstructural protein NS5%3B methyltransferase component of capping enzyme;Parent=cds-NP_059434.1;gbkey=Prot;product=RNA-dependent RNA polymerase NS5;protein_id=NP_775674.1
+NC_001437.1	RefSeq	gene	96	3691	.	+	.	ID=gene-JEVgp2;Dbxref=GeneID:12978160;Name=JEVgp2;gbkey=Gene;gene_biotype=protein_coding;locus_tag=JEVgp2
+NC_001437.1	RefSeq	CDS	96	3560	.	+	0	ID=cds-YP_006355435.1;Parent=gene-JEVgp2;Dbxref=GenBank:YP_006355435.1,GeneID:12978160;Name=YP_006355435.1;gbkey=CDS;locus_tag=JEVgp2;product=truncated JEV polyprotein;protein_id=YP_006355435.1
+NC_001437.1	RefSeq	CDS	3560	3691	.	+	0	ID=cds-YP_006355435.1;Parent=gene-JEVgp2;Dbxref=GenBank:YP_006355435.1,GeneID:12978160;Name=YP_006355435.1;gbkey=CDS;locus_tag=JEVgp2;product=truncated JEV polyprotein;protein_id=YP_006355435.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	2478	3560	.	+	.	ID=id-YP_006355435.1:795..1198;Note=Transframe fusion protein%2C the mature peptide consists of the N-terminal portion of NS1 and the alternative reading frame translation that occurs after a programmed ribosomal frameshift%3B When frameshifting occurs%2C cleavage between NS1 and NS2A fails to occur%3B May be similar to NS1-NS2AN-FIFO protein.;Parent=cds-YP_006355435.1;gbkey=Prot;product=NS1';protein_id=YP_006355436.1
+NC_001437.1	RefSeq	mature_protein_region_of_CDS	3560	3688	.	+	.	ID=id-YP_006355435.1:795..1198;Note=Transframe fusion protein%2C the mature peptide consists of the N-terminal portion of NS1 and the alternative reading frame translation that occurs after a programmed ribosomal frameshift%3B When frameshifting occurs%2C cleavage between NS1 and NS2A fails to occur%3B May be similar to NS1-NS2AN-FIFO protein.;Parent=cds-YP_006355435.1;gbkey=Prot;product=NS1';protein_id=YP_006355436.1
+NC_001437.1	RefSeq	sequence_feature	10828	10847	.	+	.	ID=id-NC_001437.1:10828..10847;Note=conserved region;gbkey=misc_feature
+NC_001437.1	RefSeq	sequence_feature	10866	10888	.	+	.	ID=id-NC_001437.1:10866..10888;Note=conserved region;gbkey=misc_feature

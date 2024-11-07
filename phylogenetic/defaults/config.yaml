@@ -3,3 +3,21 @@
 #
 # Define optional config parameters with their default values here so that users
 # do not have to dig through the workflows to figure out the default values
+
+strain_id_field: "accession"
+display_strain_field: "strain"
+
+filter:
+  params: '--min-length 8000'
+
+refine:
+  coalescent: "opt"
+  date_inference: "marginal"
+  clock_filter_iqd: 4
+
+ancestral:
+  inference: "joint"
+
+traits:
+  columns: "region country"
+  sampling_bias_correction: 3

@@ -30,3 +30,65 @@ See Augur's usage docs for these commands for more details.
 Custom node data files can also be produced by build-specific scripts in addition
 to the ones produced by Augur commands.
 """
+
+
+rule ancestral:
+    """Reconstructing ancestral sequences and mutations"""
+    input:
+        tree = "results/tree.nwk",
+        alignment = "results/aligned.fasta"
+    output:
+        node_data = "results/nt_muts.json"
+    params:
+        inference = config["ancestral"]["inference"]
+    shell:
+        """
+        augur ancestral \
+            --tree {input.tree} \
+            --alignment {input.alignment} \
+            --output-node-data {output.node_data} \
+            --inference {params.inference}
+        """
+
+rule translate:
+    """Translating amino acid sequences"""
+    input:
+        tree = "results/tree.nwk",
+        node_data = "results/nt_muts.json",
+        reference = "defaults/reference.gff3",
+    output:
+        node_data = "results/aa_muts.json"
+    shell:
+        """
+        augur translate \
+            --tree {input.tree} \
+            --ancestral-sequences {input.node_data} \
+            --reference-sequence {input.reference} \
+            --output {output.node_data} \
+        """
+
+rule traits:
+    """
+    Inferring ancestral traits for {params.columns!s}
+      - increase uncertainty of reconstruction by {params.sampling_bias_correction} to partially account for sampling bias
+    """
+    input:
+        tree = "results/tree.nwk",
+        metadata = "data/metadata.tsv"
+    output:
+        node_data = "results/traits.json",
+    params:
+        columns = 'region country host',
+        sampling_bias_correction = config["traits"]["sampling_bias_correction"],
+        strain_id = config.get("strain_id_field", "strain"),
+    shell:
+        """
+        augur traits \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --metadata-id-columns {params.strain_id} \
+            --output {output.node_data} \
+            --columns {params.columns} \
+            --confidence \
+            --sampling-bias-correction {params.sampling_bias_correction}
+        """

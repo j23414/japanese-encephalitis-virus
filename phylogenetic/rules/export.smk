@@ -24,3 +24,30 @@ This part of the workflow usually includes the following steps:
 
 See Augur's usage docs for these commands for more details.
 """
+
+rule export:
+    """Exporting data files for for auspice"""
+    input:
+        tree = "results/tree.nwk",
+        metadata = "data/metadata.tsv",
+        branch_lengths = "results/branch_lengths.json",
+        traits = "results/traits.json",
+        nt_muts = "results/nt_muts.json",
+        aa_muts = "results/aa_muts.json",
+        auspice_config = "defaults/auspice_config_global.json",
+        #description = "defaults/description.md"
+    output:
+        auspice_json = "auspice/japanese-encephalitis-virus.json"
+    params:
+        strain_id = config.get("strain_id_field", "strain"),
+    shell:
+        """
+        augur export v2 \
+            --tree {input.tree} \
+            --metadata {input.metadata} \
+            --metadata-id-columns {params.strain_id} \
+            --node-data {input.branch_lengths} {input.traits} {input.nt_muts} {input.aa_muts} \
+            --include-root-sequence-inline \
+            --output {output.auspice_json} \
+            --auspice-config {input.auspice_config}
+        """
