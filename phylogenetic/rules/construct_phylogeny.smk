@@ -44,14 +44,13 @@ rule refine:
     input:
         tree = "results/tree_raw.nwk",
         alignment = "results/aligned.fasta",
-        metadata = "data/metadata.tsv"
+        metadata = "data/metadata.tsv",
     output:
         tree = "results/tree.nwk",
-        node_data = "results/branch_lengths.json"
+        node_data = "results/branch_lengths.json",
     params:
-        coalescent = 'opt',
-        strain_id = 'accession',
-        refine_parameters = '--coalescent opt --date-inference marginal --date-confidence --clock-rate 0.00095 ' #--keep-polytomies --clock-rate 0.000755'
+        strain_id = config['strain_id_field'],
+        refine_parameters = config['refine']['refine_parameters'],
     shell:
         """
         augur refine \

@@ -55,3 +55,4 @@ MT764732 # Lab host
 MT764733 # Lab host
 OR605600 # Lab host
 PP057999 # Lab host
+OM572534 # Large insertion

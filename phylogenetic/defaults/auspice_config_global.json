@@ -1,5 +1,11 @@
 {
   "title": "Japanese encephalitis virus",
+  "data_provenance": [
+    {
+      "name": "GenBank",
+      "url": "https://www.ncbi.nlm.nih.gov/genbank/"
+    }
+  ],
   "colorings": [
     {"key": "gt", "title": "Genotype", "type": "categorical"},
     {"key": "num_date", "title": "Sampling Date", "type": "continuous"},
@@ -13,7 +19,6 @@
     "country"
   ],
   "maintainers": [
-    {"name": "Someone", "url": ""},
     {"name": "Nextstrain Team", "url": "https://next.nextstrain.org/"}
   ],
   "filters": [

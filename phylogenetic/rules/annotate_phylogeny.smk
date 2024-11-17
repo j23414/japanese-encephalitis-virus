@@ -55,7 +55,7 @@ rule translate:
     input:
         tree = "results/tree.nwk",
         node_data = "results/nt_muts.json",
-        reference = "defaults/reference.gff3",
+        reference = config['translate']['reference'],
     output:
         node_data = "results/aa_muts.json"
     shell:
@@ -78,7 +78,7 @@ rule traits:
     output:
         node_data = "results/traits.json",
     params:
-        columns = 'region country host',
+        columns = config['traits']['columns'],
         sampling_bias_correction = config["traits"]["sampling_bias_correction"],
         strain_id = config.get("strain_id_field", "strain"),
     shell:

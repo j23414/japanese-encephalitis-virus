@@ -14,10 +14,14 @@ refine:
   coalescent: "opt"
   date_inference: "marginal"
   clock_filter_iqd: 4
+  refine_parameters: '--coalescent opt --date-inference marginal --date-confidence --clock-rate 0.0001 --keep-polytomies'
 
 ancestral:
   inference: "joint"
 
+translate:
+  reference: 'defaults/reference.gff3'
+
 traits:
-  columns: "region country"
+  columns: "region country host"
   sampling_bias_correction: 3
